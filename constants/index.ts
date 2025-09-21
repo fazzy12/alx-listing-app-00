@@ -1,118 +1,368 @@
-// API Configuration
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001/api';
+import { PropertyProps } from '@/interfaces';
 
-export const API_ENDPOINTS = {
-  PROPERTIES: '/properties',
-  PROPERTY_DETAIL: '/properties/:id',
-  BOOKINGS: '/bookings',
-  USERS: '/users',
-  SEARCH: '/search',
-  REVIEWS: '/reviews',
-} as const;
 
-// Application Configuration
-export const APP_CONFIG = {
-  APP_NAME: 'ALX Listing App',
-  APP_DESCRIPTION: 'Find and book amazing places to stay',
-  ITEMS_PER_PAGE: 12,
-  MAX_GUESTS: 16,
-  MIN_NIGHTS: 1,
-  MAX_NIGHTS: 28,
-} as const;
+export const PROPERTYLISTINGSAMPLE: PropertyProps []  =  [
+  {
+    name: "Villa Ocean Breeze",
+    address: {
+      state: "Seminyak",
+      city: "Bali",
+      country: "Indonesia"
+    },
+    rating: 4.89,
+    category: ["Luxury Villa", "Pool", "Free Parking"],
+    price: 3200,
+    offers: {
+      bed: "3",
+      shower: "3",
+      occupants: "4-6"
+    },
+    image: "https://example.com/image1.jpg",
+    discount: ""
+  },
+  {
+    name: "Mountain Escape Chalet",
+    address: {
+      state: "Aspen",
+      city: "Colorado",
+      country: "USA"
+    },
+    rating: 4.70,
+    category: ["Mountain View", "Fireplace", "Self Checkin"],
+    price: 1800,
+    offers: {
+      bed: "4",
+      shower: "2",
+      occupants: "5-7"
+    },
+    image: "https://example.com/image2.jpg",
+    discount: "30"
+  },
+  {
+    name: "Cozy Desert Retreat",
+    address: {
+      state: "Palm Springs",
+      city: "California",
+      country: "USA"
+    },
+    rating: 4.92,
+    category: ["Desert View", "Pet Friendly", "Self Checkin"],
+    price: 1500,
+    offers: {
+      bed: "2",
+      shower: "1",
+      occupants: "2-3"
+    },
+    image: "https://example.com/image3.jpg",
+    discount: ""
+  },
+  {
+    name: "City Lights Penthouse",
+    address: {
+      state: "New York",
+      city: "New York",
+      country: "USA"
+    },
+    rating: 4.85,
+    category: ["City View", "Free WiFi", "24h Checkin"],
+    price: 4500,
+    offers: {
+      bed: "2",
+      shower: "2",
+      occupants: "2-4"
+    },
+    image: "https://example.com/image4.jpg",
+    discount: "15"
+  },
+  {
+    name: "Riverside Cabin",
+    address: {
+      state: "Queenstown",
+      city: "Otago",
+      country: "New Zealand"
+    },
+    rating: 4.77,
+    category: ["Riverside", "Private Dock", "Free Kayaks"],
+    price: 2800,
+    offers: {
+      bed: "3",
+      shower: "2",
+      occupants: "4-6"
+    },
+    image: "https://example.com/image5.jpg",
+    discount: "20"
+  },
+  {
+    name: "Modern Beachfront Villa",
+    address: {
+      state: "Sidemen",
+      city: "Bali",
+      country: "Indonesia"
+    },
+    rating: 4.95,
+    category: ["Beachfront", "Private Pool", "Chef Service"],
+    price: 5000,
+    offers: {
+      bed: "5",
+      shower: "4",
+      occupants: "8-10"
+    },
+    image: "https://example.com/image6.jpg",
+    discount: ""
+  },
+  {
+    name: "Lakeside Chalet",
+    address: {
+      state: "Banff",
+      city: "Alberta",
+      country: "Canada"
+    },
+    rating: 4.65,
+    category: ["Lakeside", "Mountain View", "Hiking Trails"],
+    price: 2300,
+    offers: {
+      bed: "3",
+      shower: "3",
+      occupants: "4-5"
+    },
+    image: "https://example.com/image7.jpg",
+    discount: "10"
+  },
+  {
+    name: "Tropical Garden Villa",
+    address: {
+      state: "Koh Samui",
+      city: "Surat Thani",
+      country: "Thailand"
+    },
+    rating: 4.80,
+    category: ["Garden", "Free Parking", "Self Checkin"],
+    price: 2750,
+    offers: {
+      bed: "3",
+      shower: "3",
+      occupants: "5-6"
+    },
+    image: "https://example.com/image8.jpg",
+    discount: "25"
+  },
+  {
+    name: "Urban Loft",
+    address: {
+      state: "Berlin",
+      city: "Berlin",
+      country: "Germany"
+    },
+    rating: 4.60,
+    category: ["City Center", "Free WiFi", "24h Checkin"],
+    price: 2000,
+    offers: {
+      bed: "2",
+      shower: "1",
+      occupants: "2-3"
+    },
+    image: "https://example.com/image9.jpg",
+    discount: ""
+  },
+  {
+    name: "Secluded Forest Cabin",
+    address: {
+      state: "Whistler",
+      city: "British Columbia",
+      country: "Canada"
+    },
+    rating: 4.72,
+    category: ["Secluded", "Hot Tub", "Self Checkin"],
+    price: 2600,
+    offers: {
+      bed: "4",
+      shower: "2",
+      occupants: "5-7"
+    },
+    image: "https://example.com/image10.jpg",
+    discount: "40"
+  },
+  {
+    name: "Cliffside Villa",
+    address: {
+      state: "Amalfi",
+      city: "Salerno",
+      country: "Italy"
+    },
+    rating: 4.93,
+    category: ["Cliffside", "Infinity Pool", "Sea View"],
+    price: 6000,
+    offers: {
+      bed: "4",
+      shower: "4",
+      occupants: "6-8"
+    },
+    image: "https://example.com/image11.jpg",
+    discount: "50"
+  },
+  {
+    name: "Coastal Escape Villa",
+    address: {
+      state: "Noosa",
+      city: "Queensland",
+      country: "Australia"
+    },
+    rating: 4.83,
+    category: ["Beachfront", "Pet Friendly", "Free Parking"],
+    price: 3400,
+    offers: {
+      bed: "3",
+      shower: "3",
+      occupants: "4-6"
+    },
+    image: "https://example.com/image12.jpg",
+    discount: ""
+  },
+  {
+    name: "Historical Villa",
+    address: {
+      state: "Florence",
+      city: "Tuscany",
+      country: "Italy"
+    },
+    rating: 4.67,
+    category: ["Historical", "Free Breakfast", "Self Checkin"],
+    price: 2700,
+    offers: {
+      bed: "2",
+      shower: "2",
+      occupants: "2-4"
+    },
+    image: "https://example.com/image13.jpg",
+    discount: "35"
+  },
+  {
+    name: "Downtown Apartment",
+    address: {
+      state: "Tokyo",
+      city: "Tokyo",
+      country: "Japan"
+    },
+    rating: 4.81,
+    category: ["City Center", "Free WiFi", "Public Transport"],
+    price: 2200,
+    offers: {
+      bed: "1",
+      shower: "1",
+      occupants: "2"
+    },
+    image: "https://example.com/image14.jpg",
+    discount: ""
+  },
+  {
+    name: "Luxury Safari Lodge",
+    address: {
+      state: "Serengeti",
+      city: "Mara",
+      country: "Tanzania"
+    },
+    rating: 4.97,
+    category: ["Safari", "Guided Tours", "Free Breakfast"],
+    price: 4500,
+    offers: {
+      bed: "4",
+      shower: "4",
+      occupants: "6-8"
+    },
+    image: "https://example.com/image15.jpg",
+    discount: "20"
+  },
+  {
+    name: "Countryside Cottage",
+    address: {
+      state: "Cotswolds",
+      city: "Gloucestershire",
+      country: "UK"
+    },
+    rating: 4.58,
+    category: ["Countryside", "Fireplace", "Self Checkin"],
+    price: 1800,
+    offers: {
+      bed: "2",
+      shower: "1",
+      occupants: "2-4"
+    },
+    image: "https://example.com/image16.jpg",
+    discount: "25"
+  },
+  {
+    name: "Riverfront Mansion",
+    address: {
+      state: "Paris",
+      city: "Île-de-France",
+      country: "France"
+    },
+    rating: 4.86,
+    category: ["Riverfront", "Private Garden", "Self Checkin"],
+    price: 5000,
+    offers: {
+      bed: "4",
+      shower: "3",
+      occupants: "6-8"
+    },
+    image: "https://example.com/image17.jpg",
+    discount: "30"
+  },
+  {
+    name: "Ski Chalet",
+    address: {
+      state: "Zermatt",
+      city: "Valais",
+      country: "Switzerland"
+    },
+    rating: 4.75,
+    category: ["Mountain View", "Ski Access", "Fireplace"],
+    price: 3900,
+    offers: {
+      bed: "3",
+      shower: "3",
+      occupants: "4-5"
+    },
+    image: "https://example.com/image18.jpg",
+    discount: ""
+  },
+  {
+    name: "Island Paradise Villa",
+    address: {
+      state: "Mahe",
+      city: "Victoria",
+      country: "Seychelles"
+    },
+    rating: 4.98,
+    category: ["Beachfront", "Private Pool", "Chef Service"],
+    price: 6500,
+    offers: {
+      bed: "5",
+      shower: "5",
+      occupants: "8-10"
+    },
+    image: "https://example.com/image19.jpg",
+    discount: "60"
+  },
+  {
+    name: "Clifftop Retreat",
+    address: {
+      state: "Cape Town",
+      city: "Western Cape",
+      country: "South Africa"
+    },
+    rating: 4.78,
+    category: ["Ocean View", "Private Pool", "Self Checkin"],
+    price: 4100,
+    offers: {
+      bed: "3",
+      shower: "3",
+      occupants: "4-5"
+    },
+    image: "https://example.com/image20.jpg",
+    discount: ""
+  }
+];
 
-// UI Constants
-export const BREAKPOINTS = {
-  MOBILE: 640,
-  TABLET: 768,
-  DESKTOP: 1024,
-  LARGE_DESKTOP: 1280,
-} as const;
 
-export const COLORS = {
-  PRIMARY: '#3B82F6',
-  SECONDARY: '#6B7280',
-  SUCCESS: '#10B981',
-  WARNING: '#F59E0B',
-  ERROR: '#EF4444',
-  INFO: '#06B6D4',
-} as const;
-
-// Property Types
-export const PROPERTY_TYPES = [
-  'House',
-  'Apartment',
-  'Villa',
-  'Condo',
-  'Cabin',
-  'Cottage',
-  'Loft',
-  'Studio',
-  'Townhouse',
-  'Other'
-] as const;
-
-// Amenities List
-export const COMMON_AMENITIES = [
-  { id: 'wifi', name: 'WiFi', icon: '📶' },
-  { id: 'kitchen', name: 'Kitchen', icon: '🍳' },
-  { id: 'parking', name: 'Free parking', icon: '🚗' },
-  { id: 'pool', name: 'Pool', icon: '🏊‍♂️' },
-  { id: 'hot_tub', name: 'Hot tub', icon: '🛁' },
-  { id: 'gym', name: 'Gym', icon: '💪' },
-  { id: 'air_conditioning', name: 'Air conditioning', icon: '❄️' },
-  { id: 'heating', name: 'Heating', icon: '🔥' },
-  { id: 'tv', name: 'TV', icon: '📺' },
-  { id: 'washing_machine', name: 'Washing machine', icon: '🧺' },
-  { id: 'pets_allowed', name: 'Pets allowed', icon: '🐕' },
-  { id: 'smoking_allowed', name: 'Smoking allowed', icon: '🚬' },
-] as const;
-
-// Sort Options
-export const SORT_OPTIONS = [
-  { value: 'relevance', label: 'Most relevant' },
-  { value: 'price_low', label: 'Price: Low to High' },
-  { value: 'price_high', label: 'Price: High to Low' },
-  { value: 'rating', label: 'Highest rated' },
-  { value: 'newest', label: 'Newest' },
-] as const;
-
-// Date and Time
-export const DATE_FORMAT = 'YYYY-MM-DD';
-export const DISPLAY_DATE_FORMAT = 'MMM DD, YYYY';
-export const TIME_FORMAT = 'HH:mm';
-
-// Error Messages
-export const ERROR_MESSAGES = {
-  GENERIC: 'Something went wrong. Please try again.',
-  NETWORK: 'Network error. Please check your connection.',
-  NOT_FOUND: 'The requested resource was not found.',
-  UNAUTHORIZED: 'You are not authorized to perform this action.',
-  VALIDATION: 'Please check your input and try again.',
-  BOOKING_CONFLICT: 'The selected dates are not available.',
-} as const;
-
-// Success Messages
-export const SUCCESS_MESSAGES = {
-  BOOKING_CREATED: 'Your booking has been confirmed!',
-  PROFILE_UPDATED: 'Your profile has been updated successfully.',
-  REVIEW_SUBMITTED: 'Thank you for your review!',
-} as const;
-
-// Local Storage Keys
-export const STORAGE_KEYS = {
-  USER_PREFERENCES: 'alx_user_preferences',
-  SEARCH_HISTORY: 'alx_search_history',
-  RECENT_PROPERTIES: 'alx_recent_properties',
-  BOOKING_DRAFT: 'alx_booking_draft',
-} as const;
-
-// Routes
-export const ROUTES = {
-  HOME: '/',
-  PROPERTY_DETAIL: '/property/[id]',
-  BOOKING: '/booking',
-  PROFILE: '/profile',
-  SEARCH: '/search',
-  HELP: '/help',
-  ABOUT: '/about',
-} as const;
+export const HERO_IMAGE_URL = "/assets/images/hero.jpg";
